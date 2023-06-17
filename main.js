@@ -1,19 +1,16 @@
-let NewTaskQuestion = prompt("タスクを入力してください");
-let TaskNumber = 0;
-let TaskList = [];
+let newTaskQuestion = prompt("タスクを入力してください");
+const taskList = [];
 
-function NewTaskList(tasknumber, taskname) {
-  let Newtasknumber = tasknumber;
-  let Newtaskname = taskname;
-  TaskList[Newtasknumber] = Newtaskname;
+function makeNewTaskList(taskName) {
+  let newTaskName = taskName;
+  taskList.push(newTaskName);
   console.log('====================\n現在持っているタスク一覧\n====================');
-  for (let i = 0; i < TaskList.length; i++) {
-    console.log(i + ':[内容]' + TaskList[i]);
-  }
+  taskList.forEach(function(element, index, array) {
+    console.log(index + ':[内容]' + element);
+  });
 }
 
-while (NewTaskQuestion !== null) {
-  NewTaskList(TaskNumber, NewTaskQuestion);
-  TaskNumber += 1;
-  NewTaskQuestion = prompt("タスクを入力してください");
+while (newTaskQuestion !== null) {
+  makeNewTaskList(newTaskQuestion);
+  newTaskQuestion = prompt("タスクを入力してください");
 }
