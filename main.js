@@ -2,7 +2,7 @@ let newTaskQuestion = prompt("タスクを入力してください");
 const taskList = [];
 
 function makeNewTaskList(taskName) {
-  let newTaskName = taskName;
+  const newTaskName = taskName;
   taskList.push(newTaskName);
   console.log('====================\n現在持っているタスク一覧\n====================');
   taskList.forEach(function(element, index, array) {
